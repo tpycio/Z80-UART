@@ -8,7 +8,7 @@ Module Z80 CPU and UART 16C450/550 for RCBus systems
 
 ### Schematic
 
-[Schematic - Version 1.0](Schematic.pdf)
+[Schematic - Version 1.1](Schematic.pdf)
 
 ### Jumpers and Connectors
 
@@ -19,7 +19,7 @@ Module Z80 CPU and UART 16C450/550 for RCBus systems
 | open     | disable     |
 | closed   | enable      |
 
-External power supply and USB cannot be used at the same time
+External power supply and USB cannot be used at the same time!
 
 #### JP2 - UART I/O address select
 
@@ -51,7 +51,18 @@ External power supply and USB cannot be used at the same time
 | 2-3         | from bus                       |
 | both closed | from oscillator to CPU and bus |
 
+#### JP6 - DMA channel request selection
+
+added in version 1.1
+
+| Position  | Description |
+| --------- | ----------- |
+| 1-2       | DREQ1       |
+| 2-3       | DREQ2       |
+| both open | disable     |
+
 #### P1 - Serial port
+
 Connect to USB-to-serial converter.
 
 ## Bill of Materials
@@ -80,7 +91,7 @@ Connect to USB-to-serial converter.
 | IC Socket          | U4        | 14 pin DIP                                  | 1        |
 | IC Socket          | X1        | 4 pin DIP for oscillator                    | 1        |
 
-Gerber files prepared for production at JLCPCB
+[Gerber files](gerber-JLCPCB.zip) prepared for production at JLCPCB
 
 ## Release Notes
 
@@ -90,8 +101,13 @@ Gerber files prepared for production at JLCPCB
   
   * Initial version
 
+* Version 1.1
+  
+  * Improved pull-down of the CTS signal
+  * Added DMA service request channel selection 
+
 ## License
 
-Copyright 2024 Tadeusz Pycio
+Copyright 2025 Tadeusz Pycio
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) ](https://creativecommons.org/licenses/by-nc/4.0/).
